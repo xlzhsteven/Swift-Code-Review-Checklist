@@ -5,14 +5,19 @@
 ## 2 - General
 [2.1] Single Responsibility Principle (SRP)
 - Do not place more than one responsibility into a single class or function, refactor into separate classes and functions **(Plain Objects).**
+
 [2.2] Open Closed Principle
 - While adding new functionality, existing code should not be modified. New functionality should be written in new classes and functions **(extensions)**.
+
 [2.3] KISS(Keep it simple and stupid)
 - The KISS principle is descriptive to keep the code simple and clear, making it easy to understand. After all, programming languages are for humans to understand, computers can only understand 0 and 1 — so keep coding simple and straightforward. Keep your methods small. Each method should only solve one small problem, not many use cases. If you have a lot of conditions in the method, break these out into smaller methods. It will not only be easier to read and maintain, but also help finding bugs a lot faster
+
 [2.4] Comments
 - If you need to add a comment to describe anything in your code then probably the code is ugly and not understandable so you need to revise naming and logic to keep it simple (This does not include comments to help reader understand product decisions)
+
 [2.5] Magic #
 - Avoid any magic number, define constants instead. Think first if this constant is specific for this view or it's a global setting that should be shared between views
+
 [2.6] DRY(do not repeat yourself), we should avoid any code duplication as much as possible
 [2.7] Unit test your code
 - Writing unit tests can force you to break your logic into testable pieces
@@ -22,8 +27,10 @@
 [2.8] Clarity is more important than brevity
 - Take more time when writing code to optimize for reading. Code is read much more often than written.
 - Naming is extremely important, try your best to name a variable/function/class/struct/protocol to describe its responsibility
+
 [2.9] Unused code
 - Always delete unused code. In code review when you see empty method, unused variable, outdated comments, imports hanging around your code, don't just leave it, remove it
+
 [2.10] Naming
 - When naming class or variable/function name
 - Name of class and variable should describe "what"
@@ -32,6 +39,7 @@
 - Prefer declarative over imperative programming
 - Declarative style: Describe what it does rather than how. It can greatly help with readability at the call site. It also hides implementation details and minimize call site change when implementation changes in the future.
 - Imperative style: Describe how something is achieved. When implementation changes in the future, name used may not be accurate anymore. It also leaks too much implementation details to the call site.
+
 [2.11] Avoid Nested if.
 [2.12] Prefer switch over if-else.
 [2.13] Localization, do you have any unlocalized strings. All customer facing strings shall be localized.
@@ -44,11 +52,13 @@
 - Prefer dependency injection for dependencies, avoid hidden dependencies
 - Prefer Composition over inheritance as Swift does not support multiple inheritance.
 - create Protocols and extend them using Protocol Extensions to provide default method implementations. This allows us to create much cleaner code, compared to what we could implement by relying solely on the Classical Inheritance pattern.
+
 [3.3] When functions created has potential to be reused frequently, consider making the function available under an extension.
 [3.4] Create protocol to provide extra sets of functionalities
 - When adding new functionalities to existing class/struct. Consider creating protocols describing functionalities added.
 - A generic type may be able to satisfy the requirements of a protocol only under certain conditions, such as when the type’s generic parameter conforms to the protocol. You can make a generic type conditionally conform to a protocol by listing constraints when extending the type. (protocol ... where ...) TODO: Provide example
 - Create protocol with associated types to provide same functionality to multiple types. Each type conform to the PATs will provide their own associatedType and implementation to the functions defined in the protocol. TODO: provide example
+
 [3.5] (Optional, but recommended) Create/modify a diagram when adding/updating new features
 - Diagram can be included in the code review description for better clearity to reviewer
 
@@ -58,6 +68,7 @@
 [4.3] Debug memory graph. To determine if you have any strong reference cycle, please debug the memory graph and make sure we don't have any memory leak.
 - For help on understanding on when to use `weak self` please check this [article](https://www.donnywals.com/when-to-use-weak-self-and-why/)
 - If you are using combine,  please take a look at this [article](https://www.swiftbysundell.com/articles/combine-self-cancellable-memory-management/) as well
+
 [4.4] Remove observers/invalidate timer on view dismissing.
 - If your app targets iOS 9.0 and later or macOS 10.11 and later, and you used addObserver:selector:name:object:, you do not need to unregister the observer.
 
@@ -80,6 +91,7 @@
 [8.2] If you have doubts of your current solution to the issue you are trying to solve
 - Talk to other developers and see what they think of your solution.
 - It may very well save the time and energy of yourself and people who's going to review your logic.
+
 [8.3] When receive product requirements
 - Clarify product requirements and make sure to understand what functionalities product manager is really asking for
 - Only look into solution if requirement is a valid one. Otherwise it may cause potential over-engineering
