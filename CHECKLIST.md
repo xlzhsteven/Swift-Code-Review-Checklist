@@ -1,6 +1,6 @@
-# iOS Code Submittion Checklist
+# iOS Code Submission Checklist
 ## 1 - Static Code Analyzer(Swiftlint)
-[1.1] Make sure No compilation error or warning.
+[1.1] Make sure No compilation/Swiftlint error or warning.
 
 ## 2 - General
 [2.1] Single Responsibility Principle (SRP)
